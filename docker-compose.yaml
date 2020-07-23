@@ -1,0 +1,19 @@
+version: '3'
+services:
+  source_db:
+    build:
+      context: .
+      dockerfile: MySQLDockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+    ports:
+      - "3306:3306"
+  dest_db:
+    build:
+      context: .
+      dockerfile: PostgresDockerfile
+    environment:
+      POSTGRES_DB: lahman
+      POSTGRES_PASSWORD: rootpass
+    ports:
+      - "5432:5432"
