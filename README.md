@@ -47,18 +47,4 @@ Exemplo:
   ghijkl01, 1.91, 11, 2006
 ```
 
-## Ranking
-
-Listar os primeiros e ultimos times colocados de cada ano e a quantidade de *at-bats* do ano em questão. 
-
-Exemplo: 
-
-```
-Team ID, Year, Rank, At Bats
-PH1, 1871, 1, 1281
-RC1, 1871, 9, 1036
-LAA, 2014, 1, 5652
-CHN, 2014, 5, 5508
-```
-
 

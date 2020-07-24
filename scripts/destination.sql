@@ -14,12 +14,7 @@ create table reports.hall_of_fame_star_pitchers (
     year_of_induction INT
 );
 
-create table reports.rankings (
-    team_id TEXT,
-    Year INT,
-    RANK INT,
-    at_bats INT
-);
+
 
 
 
