@@ -6,14 +6,17 @@ imputar o resultado em um um outro banco de dados.
 
 # Primeiro passo
 
-Executar a stack docker-compose que irá criar dois bancos distintos :
-1. Source DB - Banco MySQL com a base de dados Lahman’s Baseball (lahman2016)
+Executar a stack `docker-compose up -d` que irá criar dois bancos distintos :
+1. Source DB - Banco MySQL com a base de dados Lahman’s Baseball (lahman2016) 
+   * {user: root, pass: rootpass}
 2. Destination DB - Banco de Dados PostgreSQL com tabelas de resultados sintetizados a 
-   cerca de métricas que devem ser computadas a partir da base lahman2016.
-   
+   cerca de métricas que devem ser computadas a partir da base lahman2016. 
+   * {user: postgres,pass: rootpass}
+   * Esse banco irá possuir dois schemas: `staging` e `reports`
+
 # Objetivo
 
-O objetivo é preencher as tabelas `AverageSalaries`, `HallOfFameAllStartPitchers`, `Pitching` e `Rankings` no banco de dados *Destination DB* através de um
+O objetivo é preencher as tabelas `average_salaries`, `hall_of_fame_star_pitchers` no banco de dados *Destination DB* através de um
 programa/script (java, c++, python, scala, etc).
 
 Os calculos não devem ser feitos no banco de origem, havendo a opção de calcular o resultado através da aplicação/script de transferência ou 
@@ -21,7 +24,7 @@ usar uma área de staging no banco de destino para calcular o resultado à prenc
 
 
 
-## Average Salaries 
+## average_salaries
 
 Calcular o salário médio das posições infielders e pitchers pra cada ano e inputar o resultado na tabela.
 
@@ -34,7 +37,7 @@ Year, Fielding, Pitching
 2000, "3,111,000", "4,500,000"
 ```
 
-## Hall of Fame All Star Pitchers
+## hall_of_fame_all_start_pitchers
 
 Calcular a quantidade de vezes que um **Pitcher** apareceu no Hall da Fama e o ERA médio nos anos em que ele apareceu no hall da fama.
 
